@@ -12,7 +12,7 @@ Responsive UI: A clean, user-friendly interface that's optimized for both deskto
 Frontend: HTML, CSS, TypeScript (React), NextJS
 
 ## How to Run:
-- Clone the repository: git clone https://github.com/yourusername/expense-tracker.git
+- Clone the repository: git clone https://github.com/williamalowe/expense-tracker.git
 - navigate to the project directory: cd expense-tracker
 - Install dependencies: npm install
 - Start the frontend server: npm run dev
