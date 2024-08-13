@@ -50,7 +50,10 @@ export default function ExpenseSection({
       {expenses && (
         <ul className="mt-4 w-full px-2">
           {expenses.map((expense, index) => (
-            <li key={index} className="px-6 rounded-md flex gap-x-12 hover:bg-sky-200">
+            <li
+              key={index}
+              className="px-6 rounded-md flex gap-x-12 hover:bg-sky-200"
+            >
               <h5 className="">{expense.name}</h5>
               <p className="ml-auto italic">
                 ${expense.value}{" "}
@@ -75,31 +78,30 @@ export default function ExpenseSection({
       {showForm && (
         <form className="flex flex-col gap-y-1 mt-4 items-center">
           <div className="flex gap-x-2">
-          <div className="flex items-center">
-            <label className="uppercase border-2 border-sky-800 bg-sky-800 px-2 rounded-l-md text-white font-bold tracking-wider">
-              Expense
-            </label>
-            <input
-              type="text"
-              className="w-48 flex-1 border-2 border-sky-800 rounded-r-md pl-1"
-              placeholder={placeholder}
-              value={newExpenseName}
-              onChange={(e) => setNewExpenseName(e.target.value)}
-            />
-          </div>
-          <div className="flex items-center">
-            <label className="border-2 border-sky-800 bg-sky-800 px-2 rounded-l-md text-white font-bold tracking-wider">
-              $
-            </label>
-            <input
-              type="number"
-              className="w-24 border-2 border-sky-800 rounded-r-md pl-1"
-              placeholder="0.00"
-              value={newExpenseValue}
-              onChange={(e) => setNewExpenseValue(e.target.valueAsNumber)}
-            />
-          </div>
-
+            <div className="flex items-center">
+              <label className="uppercase border-2 border-sky-800 bg-sky-800 px-2 rounded-l-md text-white font-bold tracking-wider">
+                Expense
+              </label>
+              <input
+                type="text"
+                className="w-48 flex-1 border-2 border-sky-800 rounded-r-md pl-1"
+                placeholder={placeholder}
+                value={newExpenseName}
+                onChange={(e) => setNewExpenseName(e.target.value)}
+              />
+            </div>
+            <div className="flex items-center">
+              <label className="border-2 border-sky-800 bg-sky-800 px-2 rounded-l-md text-white font-bold tracking-wider">
+                $
+              </label>
+              <input
+                type="number"
+                className="w-24 border-2 border-sky-800 rounded-r-md pl-1"
+                placeholder="0.00"
+                value={newExpenseValue}
+                onChange={(e) => setNewExpenseValue(e.target.valueAsNumber)}
+              />
+            </div>
           </div>
           <button
             onClick={addNewExpense}
