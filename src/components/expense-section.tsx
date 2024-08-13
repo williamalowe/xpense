@@ -1,5 +1,10 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+
+interface expenseItem {
+  name: string,
+  value: number,
+}
 
 export default function ExpenseSection({
   header,
@@ -8,12 +13,29 @@ export default function ExpenseSection({
   header: string;
   placeholder: string;
 }) {
-  const [expenses, setExpenses] = useState([{ name: "test", value: 0 }]);
+  const [expenses, setExpenses] = useState<expenseItem[]>(() => []);
   const [showForm, setShowForm] = useState(false);
   const [newExpenseName, setNewExpenseName] = useState("");
   const [newExpenseValue, setNewExpenseValue] = useState(0);
+  const [showError, setShowError] = useState(false);
 
-  console.log(newExpenseName, newExpenseValue);
+  const reset = () => {
+    setNewExpenseName("");
+    setNewExpenseValue(0);
+    setShowError(false);
+    setShowForm(false);
+  };
+
+  // const addNewExpense = (e: ChangeEvent<HTMLInputElement>) => {
+  const addNewExpense = (e: any) => {
+    e.preventDefault();
+    const newExpense: expenseItem = {
+      name: newExpenseName,
+      value: newExpenseValue,
+    };
+      setExpenses([...expenses, newExpense]);
+      reset();
+  };
 
   return (
     <div>
@@ -22,8 +44,8 @@ export default function ExpenseSection({
       </h3>
       {expenses && (
         <ul className="mt-4">
-          {expenses.map((expense) => (
-            <li key={expense.name} className="flex">
+          {expenses.map((expense, index) => (
+            <li key={index} className="flex">
               <h5 className="font-bold">{expense.name}</h5>
               <p className="ml-auto italic">
                 ${expense.value}{" "}
@@ -61,12 +83,17 @@ export default function ExpenseSection({
             <input
               type="number"
               className="w-24 border-2 border-sky-800 rounded-r-md pl-1"
-              placeholder="0.00" 
+              placeholder="0.00"
               value={newExpenseValue}
               onChange={(e) => setNewExpenseValue(e.target.valueAsNumber)}
-              />
+            />
           </div>
-          <button className="py-1 border-2 border-sky-800 text-sky-800/80 uppercase font-bold tracking-wider text-xs rounded-md hover:bg-sky-800 hover:text-white transition">Add Expense</button>
+          <button
+            onClick={addNewExpense}
+            className="py-1 border-2 border-sky-800 text-sky-800/80 uppercase font-bold tracking-wider text-xs rounded-md hover:bg-sky-800 hover:text-white transition"
+          >
+            Add Expense
+          </button>
         </form>
       )}
     </div>
