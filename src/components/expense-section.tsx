@@ -75,7 +75,7 @@ export default function ExpenseSection({
       )}
       <button
         onClick={() => setShowForm(!showForm)}
-        className="w-6 h-6 rounded-full bg-sky-800 text-white text-2xl flex items-center justify-center"
+        className="mt-4 w-6 h-6 rounded-full bg-sky-200 text-black/60 text-2xl flex items-center justify-center"
       >
         {showForm ? <BsDash /> : <BsPlus />}
       </button>
