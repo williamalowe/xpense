@@ -10,11 +10,15 @@ interface expenseItem {
 export default function ExpenseSection({
   header,
   placeholder,
+  expenseList,
+  handleAdd,
 }: {
   header: string;
   placeholder: string;
+  expenseList: expenseItem[];
+  handleAdd: (newExpense: expenseItem) => void;
 }) {
-  const [expenses, setExpenses] = useState<expenseItem[]>(() => []);
+  // const [expenses, setExpenses] = useState<expenseItem[]>(() => []);
   const [showForm, setShowForm] = useState(false);
   const [newExpenseName, setNewExpenseName] = useState("");
   const [newExpenseValue, setNewExpenseValue] = useState(0);
@@ -35,7 +39,7 @@ export default function ExpenseSection({
       value: newExpenseValue,
     };
     if (newExpense.name !== "" && newExpenseValue > 0) {
-      setExpenses([...expenses, newExpense]);
+      handleAdd(newExpense);
       reset();
     } else {
       setShowError(true);
@@ -47,9 +51,9 @@ export default function ExpenseSection({
       <h3 className="text-center text-2xl font-bold tracking-wider">
         {header} Expenses
       </h3>
-      {expenses && (
+      {expenseList && (
         <ul className="mt-4 w-full px-2">
-          {expenses.map((expense, index) => (
+          {expenseList.map((expense, index) => (
             <li
               key={index}
               className="px-6 rounded-md flex gap-x-12 hover:bg-sky-200"
@@ -110,7 +114,7 @@ export default function ExpenseSection({
             Add Expense
           </button>
           {showError && (
-            <p className="max-w-[200px] text-xs text-center">
+            <p className="mt-4 max-w-[400px] text-xs text-center text-red-600">
               Oops something has gone wrong! Please esnure that you had included
               a name for your expense, and the value is greater than 0.
             </p>
