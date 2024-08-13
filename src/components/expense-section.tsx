@@ -83,24 +83,24 @@ export default function ExpenseSection({
         <form className="flex flex-col gap-y-1 mt-4 items-center">
           <div className="flex gap-x-2">
             <div className="flex items-center">
-              <label className="uppercase border-2 border-sky-800 bg-sky-800 px-2 rounded-l-md text-white font-bold tracking-wider">
+              <label className="uppercase border-2 border-sky-200 bg-sky-200 px-2 rounded-l-md text-black/60 font-bold tracking-wider">
                 Expense
               </label>
               <input
                 type="text"
-                className="w-48 flex-1 border-2 border-sky-800 rounded-r-md pl-1"
+                className="w-48 flex-1 border-2 border-sky-200 rounded-r-md pl-1"
                 placeholder={placeholder}
                 value={newExpenseName}
                 onChange={(e) => setNewExpenseName(e.target.value)}
               />
             </div>
             <div className="flex items-center">
-              <label className="border-2 border-sky-800 bg-sky-800 px-2 rounded-l-md text-white font-bold tracking-wider">
+              <label className="border-2 border-sky-200 bg-sky-200 px-2 rounded-l-md text-black/60 font-bold tracking-wider">
                 $
               </label>
               <input
                 type="number"
-                className="w-24 border-2 border-sky-800 rounded-r-md pl-1"
+                className="w-24 border-2 border-sky-200 rounded-r-md pl-1"
                 placeholder="0.00"
                 value={newExpenseValue}
                 onChange={(e) => setNewExpenseValue(e.target.valueAsNumber)}
@@ -109,7 +109,7 @@ export default function ExpenseSection({
           </div>
           <button
             onClick={addNewExpense}
-            className="w-full py-1 border-2 border-sky-800 text-sky-800/80 uppercase font-bold tracking-wider text-xs rounded-md hover:bg-sky-800 hover:text-white transition"
+            className="w-full py-1 border-2 border-sky-200 text-sky-800/80 uppercase font-bold tracking-wider text-xs rounded-md hover:bg-sky-800 hover:text-white transition"
           >
             Add Expense
           </button>
