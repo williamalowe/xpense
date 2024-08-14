@@ -88,7 +88,7 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
           </div>
           {
             showError && 
-            <p>Oops! Something went wrong. Please make sure your inputs are valid.</p>
+            <p className="text-red-600 text-sm text-center">Oops! Something went wrong. Please make sure your inputs are valid.</p>
           }
         </form> 
       )}
