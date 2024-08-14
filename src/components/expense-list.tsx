@@ -1,3 +1,4 @@
+import NewExpenseForm from "./new-expense-form";
 
 type Expense = {
   id: number;
@@ -33,6 +34,7 @@ export default function ExpenseList({ title, expenses }: {
           </p>
         </li>
       </ul>
+      <NewExpenseForm />
     </div>
   )
 }
