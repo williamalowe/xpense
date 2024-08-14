@@ -5,7 +5,6 @@ import { createContext, useContext, useState } from "react";
 type Expense = {
   id: number;
   expense: string;
-  tag: string;
   value: number;
   occurance: string;
 };
