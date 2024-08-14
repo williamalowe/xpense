@@ -17,9 +17,24 @@ export default function ExpenseList({ title, listItems }: {
       <ul>
         {
           listItems.map((item) => 
-          <li key={item.id}></li>
+          <li key={item.id} className="flex items-center gap-x-4">
+          <h5>{item.expense}</h5>
+          <p className="ml-auto text-sm">${item.value}</p>
+          </li>
         )
         }
+        <li className="flex items-center gap-x-4">
+          <h5>Rent</h5>
+          <p className="ml-auto text-sm">$1200 p/month</p>
+        </li>
+        <li className="flex items-center gap-x-4">
+          <h5>Rent</h5>
+          <p className="ml-auto text-sm">$1200 p/month</p>
+        </li>
+        <li className="flex items-center gap-x-4">
+          <h5>Rent</h5>
+          <p className="ml-auto text-sm">$1200 p/month</p>
+        </li>
         <li className="flex items-center gap-x-4">
           <h5>Rent</h5>
           <p className="ml-auto text-sm">$1200 p/month</p>
