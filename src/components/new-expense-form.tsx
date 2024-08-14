@@ -18,7 +18,8 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
     setShowError(false);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
     const newExpense = {
       id: uuidv4(),
       expense: newExpenseName,
@@ -44,7 +45,7 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
       </button>
       {showForm && (
         <form
-          onSubmit={(e) => e.preventDefault}
+          onSubmit={handleSubmit}
           className="w-full bg-white rounded text-black p-2 flex flex-col gap-y-2"
         >
           <div className="flex">
@@ -80,15 +81,15 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
             </div>
             <button
               className="ml-auto px-2 bg-emerald-400 rounded"
-              onClick={handleSubmit}
+              type="submit"
             >
               Add
             </button>
           </div>
-          {/* {
+          {
             showError && 
             <p>Oops! Something went wrong. Please make sure your inputs are valid.</p>
-          } */}
+          }
         </form> 
       )}
     </div>

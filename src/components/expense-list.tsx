@@ -26,9 +26,9 @@ export default function ExpenseList({ title }: { title: string }) {
             <h5>{expense.expense}</h5>
             <p className="ml-auto text-sm">
               ${expense.value}
-              {title === "Daily"
+              {title === "daily"
                 ? " p/day"
-                : title === "Weekly"
+                : title === "weekly"
                 ? " p/week"
                 : " p/month"}
             </p>
