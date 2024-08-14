@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-amber-400`}>
+      <body className={`${inter.className} bg-sky-600`}>
         <ExpenseContextProvider>{children}</ExpenseContextProvider>
       </body>
     </html>
