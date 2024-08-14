@@ -7,13 +7,13 @@ export default function Home() {
         <div className="flex-1 rounded-br-[2rem] bg-white"></div>
         <div className="h-[65vh] bg-zinc-800 text-white p-4 overflow-scroll no-scrollbar">
           <ExpenseList 
-            title="Daily"
+            title="daily"
           />
           <ExpenseList 
-            title="Weekly"
+            title="weekly"
           />
           <ExpenseList 
-            title="Monthly"
+            title="monthly"
           />
         </div>
       </div>

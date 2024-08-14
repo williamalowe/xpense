@@ -3,7 +3,9 @@ import { useExpense } from "@/providers/expense-context";
 import { useState } from "react";
 import { BsDash, BsPlus } from "react-icons/bs";
 
-export default function NewExpenseForm() {
+export default function NewExpenseForm({ occurance }: {
+  occurance: string
+}) {
   const {addExpense} = useExpense();
   const [showForm, setShowForm] = useState(false);
   return (
