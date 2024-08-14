@@ -36,20 +36,20 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col gap-y-4 items-center justify-center py-4">
       <button
         onClick={() => setShowForm(!showForm)}
-        className="mb-4 w-4 h-4 flex items-center justify-center bg-emerald-400 rounded text-black"
+        className="w-4 h-4 flex items-center justify-center bg-emerald-400 rounded text-black"
       >
         {showForm ? <BsDash /> : <BsPlus />}
       </button>
       {showForm && (
         <form
           onSubmit={handleSubmit}
-          className="w-full bg-white rounded text-black p-2 flex flex-col gap-y-2"
+          className="w-full rounded text-black flex flex-col gap-y-2"
         >
           <div className="flex">
-            <label className="bg-emerald-400 px-2 rounded-l-md border border-emerald-400">
+            <label className="bg-emerald-400 px-2 rounded-l-md border border-emerald-400 font-bold">
               Expense
             </label>
             <input
@@ -68,7 +68,7 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
           </div>
           <div className="flex">
             <div className="flex">
-              <label className="bg-emerald-400 px-2 rounded-l-md border border-emerald-400">
+              <label className="bg-emerald-400 px-2 rounded-l-md border border-emerald-400 font-bold">
                 $
               </label>
               <input
@@ -80,7 +80,7 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
               />
             </div>
             <button
-              className="ml-auto px-2 bg-emerald-400 rounded"
+              className="ml-auto px-2 bg-emerald-400 rounded font-bold"
               type="submit"
             >
               Add
