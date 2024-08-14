@@ -54,7 +54,7 @@ export default function ExpenseList({ title }: { title: string }) {
         </li> */}
       </ul>
       {
-        displayList.length === 0 && <p className="text-center text-sm my-2">No Expenses</p>
+        displayList.length === 0 && <p className="text-center text-sm my-2 capitalize">No {title} Expenses</p>
       }
       <NewExpenseForm 
         occurance={title}
