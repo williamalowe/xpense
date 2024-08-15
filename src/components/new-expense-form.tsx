@@ -27,7 +27,7 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
       occurance: occurance,
     };
 
-    if (newExpense.expense === "" || newExpense.value < 1) {
+    if (newExpense.expense === "" || newExpense.value < 0.01) {
       setShowError(true);
     } else {
       addExpense(newExpense);
