@@ -53,6 +53,7 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
               Expense
             </label>
             <input
+              required
               type="text"
               className="border border-emerald-400 px-2 rounded-r-md w-[100%]"
               value={newExpenseName}
@@ -72,7 +73,9 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
                 $
               </label>
               <input
+                required
                 type="number"
+                step={0.01}
                 className="border border-emerald-400 px-2 rounded-r-md w-[25%]"
                 value={newExpenseValue}
                 min={0}
@@ -86,11 +89,13 @@ export default function NewExpenseForm({ occurance }: { occurance: string }) {
               Add
             </button>
           </div>
-          {
-            showError && 
-            <p className="text-red-600 text-sm text-center">Oops! Something went wrong. Please make sure your inputs are valid.</p>
-          }
-        </form> 
+          {showError && (
+            <p className="text-red-600 text-sm text-center">
+              Oops! Something went wrong. Please make sure your inputs are
+              valid.
+            </p>
+          )}
+        </form>
       )}
     </div>
   );
