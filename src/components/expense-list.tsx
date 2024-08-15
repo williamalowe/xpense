@@ -34,31 +34,13 @@ export default function ExpenseList({ title }: { title: string }) {
             </p>
           </li>
         ))}
-        {/* <li className="flex items-center gap-x-4">
-          <h5>Coffee</h5>
-          <p className="ml-auto text-sm">
-            $5.00
-            {
-              title === "Daily" ? " p/day" : title === "Weekly" ? " p/week" : " p/month"
-            }
-          </p>
-        </li>
-        <li className="flex items-center gap-x-4">
-          <h5>Coffee</h5>
-          <p className="ml-auto text-sm">
-            $5.00
-            {
-              title === "Daily" ? " p/day" : title === "Weekly" ? " p/week" : " p/month"
-            }
-          </p>
-        </li> */}
       </ul>
-      {
-        displayList.length === 0 && <p className="text-center text-sm my-2 capitalize">No {title} Expenses</p>
-      }
-      <NewExpenseForm 
-        occurance={title}
-      />
+      {displayList.length === 0 && (
+        <p className="text-center text-sm my-2 capitalize">
+          No {title} Expenses
+        </p>
+      )}
+      <NewExpenseForm occurance={title} />
     </div>
   );
 }
