@@ -1,4 +1,5 @@
 import ExpenseList from "@/components/expense-list";
+import GitHubLink from "@/components/github-link";
 import Header from "@/components/header";
 import Outputs from "@/components/outputs";
 
@@ -22,6 +23,7 @@ export default function Home() {
           />
         </div>
       </div>
+      <GitHubLink />
     </main>
   );
 }
