@@ -24,28 +24,28 @@ export default function Outputs() {
   return (
     <div className="p-4 flex flex-col gap-y-2">
       <div className="flex gap-x-2">
-        <div className="text-4xl font-bold bg-emerald-400 px-2 rounded-md">
+        <h3 className="text-4xl font-bold bg-emerald-400 px-2 rounded-md">
           ${total}
-        </div>
-        <div className="italic">Yearly</div>
+        </h3>
+        <h5 className="italic">Yearly</h5>
       </div>
       <div className="flex gap-x-1 mt-2">
-        <div className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
+        <h3 className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
           ${Math.round((total / 365) * 100) / 100}
-        </div>
-        <div className="italic text-xs">Daily</div>
+        </h3>
+        <h5 className="italic text-xs">Daily</h5>
       </div>
       <div className="flex gap-x-1">
-        <div className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
+        <h3 className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
           ${Math.round((total / 52) * 100) / 100}
-        </div>
-        <div className="italic text-xs">Weekly</div>
+        </h3>
+        <h5 className="italic text-xs">Weekly</h5>
       </div>
       <div className="flex gap-x-1">
-        <div className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
+        <h3 className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
           ${Math.round((total / 12) * 100) / 100}
-        </div>
-        <div className="italic text-xs">Monthly</div>
+        </h3>
+        <h5 className="italic text-xs">Monthly</h5>
       </div>
     </div>
   );
