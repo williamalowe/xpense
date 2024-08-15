@@ -22,31 +22,11 @@ export default function Outputs() {
   };
   const total = evaluateTotal();
   return (
-    <div className="p-4 flex flex-col gap-y-2">
-      <div className="flex gap-x-2">
-        <h3 className="text-4xl font-bold bg-emerald-400 px-2 rounded-md">
-          ${total}
-        </h3>
-        <h5 className="italic">Yearly</h5>
-      </div>
-      <div className="flex gap-x-1 mt-2">
-        <h3 className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
-          ${Math.round((total / 365) * 100) / 100}
-        </h3>
-        <h5 className="italic text-xs">Daily</h5>
-      </div>
-      <div className="flex gap-x-1">
-        <h3 className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
-          ${Math.round((total / 52) * 100) / 100}
-        </h3>
-        <h5 className="italic text-xs">Weekly</h5>
-      </div>
-      <div className="flex gap-x-1">
-        <h3 className="text-xl font-bold  bg-emerald-400 px-2 rounded-md">
-          ${Math.round((total / 12) * 100) / 100}
-        </h3>
-        <h5 className="italic text-xs">Monthly</h5>
-      </div>
+    <div className="p-4 flex flex-col">
+      <h3 className="font-bold text-2xl hover:italic hover:translate-x-4 transition"><span className="text-4xl text-emerald-600">${total}</span> Yearly</h3>
+      <h5 className="font-bold text-xl opacity-60 hover:opacity-100 hover:italic hover:translate-x-4 transition"><span className="text-2xl text-emerald-600">${Math.round((total / 12) * 100) / 100}</span> Monthly</h5>
+      <h5 className="font-bold text-xl opacity-60 hover:opacity-100 hover:italic hover:translate-x-4 transition"><span className="text-2xl text-emerald-600">${Math.round((total / 52) * 100) / 100}</span> Weekly</h5>
+      <h5 className="font-bold text-xl opacity-60 hover:opacity-100 hover:italic hover:translate-x-4 transition"><span className="text-2xl text-emerald-600">${Math.round((total / 365) * 100) / 100}</span> Daily</h5>
     </div>
   );
 }
