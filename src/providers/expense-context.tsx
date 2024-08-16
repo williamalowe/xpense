@@ -27,30 +27,6 @@ export default function ExpenseContextProvider({
     setExpenses([...expenses, newExpense]);
   };
 
-  // const addTest = () => {
-  //   addExpense({
-  //     id: 1,
-  //     expense: "Takeaway Coffee",
-  //     tag: "Food/Drink",
-  //     value: 4.50,
-  //     occurance: "daily"
-  //   });
-  //   addExpense({
-  //     id: 2,
-  //     expense: "Groceries",
-  //     tag: "Essentials",
-  //     value: 100,
-  //     occurance: "weekly"
-  //   });
-  //   addExpense({
-  //     id: 1,
-  //     expense: "Rent",
-  //     tag: "Essentials",
-  //     value: 2400,
-  //     occurance: "monthly"
-  //   });
-  // }
-
   return (
     <ExpenseContext.Provider value={{ expenses, addExpense }}>
       {children}
