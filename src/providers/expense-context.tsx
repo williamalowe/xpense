@@ -12,6 +12,7 @@ type Expense = {
 type ExpenseContextType = {
   expenses: Expense | any;
   addExpense: (expense: Expense) => void;
+  deleteExpense: (id: number) => void;
 };
 
 const ExpenseContext = createContext<ExpenseContextType | null>(null);
@@ -27,8 +28,13 @@ export default function ExpenseContextProvider({
     setExpenses([...expenses, newExpense]);
   };
 
+  const deleteExpense = (id: number) => {
+    const newList = expenses.filter((expense) => expense.id !== id);
+    setExpenses(newList);
+  }
+
   return (
-    <ExpenseContext.Provider value={{ expenses, addExpense }}>
+    <ExpenseContext.Provider value={{ expenses, addExpense, deleteExpense }}>
       {children}
     </ExpenseContext.Provider>
   );
