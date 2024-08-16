@@ -25,7 +25,7 @@ export default function ExpenseList({ title }: { title: string }) {
         {displayList.map((expense: Expense) => (
           <li key={expense.id} className="flex items-center gap-x-4 hover:bg-black px-2 rounded-md">
             <button className="text-red-600 hover:scale-110 transition" onClick={() => deleteExpense(expense.id)}><BsTrash /></button>
-            <h5 className="text-wrap">{expense.expense}</h5>
+            <h5>{expense.expense}</h5>
             <p className="ml-auto text-sm">
               ${expense.value}
               {title === "daily"
