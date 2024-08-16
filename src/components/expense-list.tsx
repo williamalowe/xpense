@@ -1,6 +1,7 @@
 "use client";
 import { useExpense } from "@/providers/expense-context";
 import NewExpenseForm from "./new-expense-form";
+import { BsTrash } from "react-icons/bs";
 
 type Expense = {
   id: number;
@@ -10,7 +11,7 @@ type Expense = {
 };
 
 export default function ExpenseList({ title }: { title: string }) {
-  const { expenses } = useExpense();
+  const { expenses, deleteExpense } = useExpense();
   const displayList = expenses.filter(
     (expense: Expense) => expense.occurance === title
   );
@@ -22,8 +23,9 @@ export default function ExpenseList({ title }: { title: string }) {
       </h3>
       <ul>
         {displayList.map((expense: Expense) => (
-          <li key={expense.id} className="flex items-center gap-x-4">
-            <h5>{expense.expense}</h5>
+          <li key={expense.id} className="flex items-center gap-x-4 hover:bg-black px-2 rounded-md">
+            <button className="text-red-600 hover:scale-110 transition" onClick={() => deleteExpense(expense.id)}><BsTrash /></button>
+            <h5 className="text-wrap">{expense.expense}</h5>
             <p className="ml-auto text-sm">
               ${expense.value}
               {title === "daily"
